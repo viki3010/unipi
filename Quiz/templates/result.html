@@ -1,0 +1,33 @@
+{% extends 'Quiz/dependencies.html' %}
+
+{% block content %}
+
+<div class="container ">
+        
+    <div class="card-columns" style="padding: 10px; margin: 20px;">
+        <div class="card" align="centre " style="width: 32rem; border:5px black solid">
+            <div class="card-body">
+            <p
+                {% if percent >= 90 %}
+                    <h5>Congratulations! You are highly financially literate!</h5>
+                {% elif percent >= 70 %}
+                    <h5>Congratulations! You are financially literate!</h5>
+                {% elif percent >= 50 %}
+                    <h5>You are making progress in your financial literacy!</h5>
+                {% else %}
+                    <h5>Keep learning to improve your financial literacy!</h5>
+                {% endif %}
+            </p>
+                <p class="card-text">Percentage: {{percent}}%</p>
+                <p class="card-text">Time Taken: {{time}} seconds</p>
+                <p class="card-text">Correct answers: {{correct}}</p>
+                <p class="card-text">Incorrect answers: {{wrong}}</p>
+                <p class="card-text">Total questions: {{total}}</p>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}
